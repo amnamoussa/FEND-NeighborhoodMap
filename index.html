@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Udacity Neighborhood Map Project | Amna Moussa</title>
+        <!--customized style-->
+        <link rel="stylesheet" href="css/style.css">
+        <!--Bootstrap has been used for the navigation bar-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <!--navigation bar with light theme (default)-->
+        <nav class="navbar navbar-default ">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    
+                    <!--collapse button-->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <p class="navbar-brand">Neighborhood Map </p>
+                </div>
+                
+                <!--all data that will be collapsed when window size changes-->
+                <div class="collapse navbar-collapse " id="myNavbar">
+                        <ul class="nav navbar-nav flex" data-bind="foreach: filterLocation">
+                            <a href="#" id="locations"><li class="nav-item" data-bind="text: title, click: $parent.bounceMarker"></li></a>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <!--search input for search filtering for locations-->
+                            <input class="margin-top width-90" data-bind="textInput: searchOption, valueUpdate: 'afterkeydown'" placeholder=" search location">
+                        </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <!--Google map will be shown here-->
+            <div id="map"></div>
+        </div>
+        <footer>
+            <span>2018 | </span>
+            <a href="http://amnamoussa.com/" target="_blank">Amna Moussa | </a>
+            <span>Powered by</span>
+            <a href="https://foursquare.com/" target="_blank">
+                <img class="foursquare" src="img/Foursquare_logo.png" alt="powered by Foursquare" style="width: 50px;height: 30px">
+            </a>        
+        </footer>
+        <script src="js/knockout-3.4.2.js" charset="utf-8"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>  
+
+        <script src="js/app.js" charset="utf-8"></script>
+        
+        <!--Google map with key, callback function, and error handling-->
+        <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyD-mb3AC2r3fTaksMYZ8vtZFLggYbmXNDY&callback=main" onerror="error()" async defer></script>
+    </body>
+</html>
