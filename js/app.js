@@ -53,7 +53,7 @@ var locations = [
         lng:  39.142742,
         type: 'book_store'
     }
-]
+];
 
 /*
 * viewmodel function that handles the third-party API,
@@ -122,7 +122,7 @@ function ViewModel() {
                     {color: '#008080'}
                 ]
             }
-        ]
+        ];
         var mapCanvas = document.getElementById('map');
         var mapOptions = {
             //route
@@ -186,7 +186,7 @@ $(document).ready(function() {
   function setHeight() {
     windowHeight = $(window).innerHeight();
     $('#map').css('min-height', windowHeight);
-  };
+  }
   setHeight();
 
   $(window).resize(function() {
